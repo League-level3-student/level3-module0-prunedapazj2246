@@ -1,19 +1,46 @@
 package _01_Simple_Array_Algorithms;
 
+import org.junit.jupiter.api.Test;
+
+//import org.junit.Test;
+
 public class _00_1D_Array_Methods {
     //1. Complete the method so that it returns the sum of all
     //   of the integers in the array being passed in
-    public static int sumIntArray(int[] values) {
 
-        return 0;
+
+
+
+	public static int sumIntArray(int[] values) {
+		  
+    	int sum=0;
+for(int i=0;i<values.length;i++) {
+	if(i==0) {
+		values[i]= sum;
+	}
+	else {
+sum += values[i]=sum;	
+	}
+}
+System.out.println(sum);       
+return sum;
     }
 
     //2. Complete the method so that it returns the average of all
     //   of the integers in the array being passed in
     public static double averageIntArray(int[] values) {
-
-        return 0;
-    }
+int average=0;
+for(int i=0; i<values.length;i++) {
+	if(i==0) {
+		values[i]= average;
+	}
+	else {
+average += values[i]=average;	
+	}
+}
+average/values.length=average;
+        return average;
+}
 
 
     //3. Complete the method so that it returns true if the integer
