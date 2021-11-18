@@ -15,12 +15,10 @@ public class _00_1D_Array_Methods {
 		  
     	int sum=0;
 for(int i=0;i<values.length;i++) {
-	if(i==0) {
-		values[i]= sum;
-	}
-	else {
-sum += values[i]=sum;	
-	}
+
+	
+sum += values[i];	
+	
 }
 System.out.println(sum);       
 return sum;
@@ -29,16 +27,13 @@ return sum;
     //2. Complete the method so that it returns the average of all
     //   of the integers in the array being passed in
     public static double averageIntArray(int[] values) {
-int average=0;
-for(int i=0; i<values.length;i++) {
-	if(i==0) {
-		values[i]= average;
-	}
-	else {
-average += values[i]=average;	
-	}
-}
-average/values.length=average;
+double average=0;
+int sum = sumIntArray(values);
+
+
+	
+
+	average= (double)sum/values.length;
         return average;
 }
 
@@ -47,7 +42,11 @@ average/values.length=average;
     //   array contains the value specified by the second parameter.
     //   It should otherwise return false.
     public static boolean containsIntValue(int[] array, int value) {
-
+for(int i =0;i < array.length;i++) {
+	if(array[i]==value) {
+	return true;
+	}
+}
         return false;
     }
 
@@ -55,7 +54,11 @@ average/values.length=average;
     //   first instance that the specified value occurs in the array.
     //   If the array does not contain the specified value, it should return -1.
     public static int getIndex(int[] arr, int value) {
-
-        return 0;
+    	for(int i =0;i < arr.length;i++) {
+    		if(arr[i]==value) {
+    		return i;
+    		}
+    	}
+        return -1;
     }
 }
