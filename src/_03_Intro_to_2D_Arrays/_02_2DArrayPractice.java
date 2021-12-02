@@ -30,9 +30,11 @@ public class _02_2DArrayPractice {
      *          3, 4, 5
      *          6, 7, 8
      */
+	
+	
     public Integer[][] test1() {
-        
-        return null;
+    	Integer[][] array2d= new Integer[3][3];
+        return array2d;
     }
     
     /*
@@ -40,9 +42,10 @@ public class _02_2DArrayPractice {
      *          "a", "b", "c", "d",
      *          "e", "f", "g", "e"
      */
+    
     public String[][] test2() {
-        
-        return null;
+    	String[][] array2d =new String[2][4] ;
+        return array2d;
     }
     
     /*
@@ -54,8 +57,8 @@ public class _02_2DArrayPractice {
      *          true, false
      */
     public Boolean[][] test3() {
-        
-        return null;
+      Boolean[][]array2d= new Boolean[5][2] ;
+        return array2d;
     }
     
     /*
@@ -64,7 +67,8 @@ public class _02_2DArrayPractice {
      * 
      * int[][] grid = new int[2][3];
      * 
-     * 
+     * {1 2 3}
+     * {4 5 6}
      * 
      * Show your teacher the grid you created
      */
@@ -74,9 +78,12 @@ public class _02_2DArrayPractice {
      * Assume all the elements in the 2D array are initialized.
      * 
      * Robot[][] robots = new Robot[4][2];
+     * {}
      * 
-     * 
-     * 
+     * {1 2}
+     * {3 4}
+     * {5 6}
+     * {7 8}
      * Show your teacher the grid you created
      */
     
@@ -87,7 +94,7 @@ public class _02_2DArrayPractice {
     public Object test4() {
         Object[][] objects = { {null, null, null, null}, {null, null, null, new Object()} };
         
-        return null;
+        return objects[1][3];
     }
     
     /* Given the array of Objects below, return the element that is not null
@@ -97,7 +104,7 @@ public class _02_2DArrayPractice {
     public Object test5() {
         Object[][] objects = { {null, null, new Object(), null}, {null, null, null, null} };
         
-        return null;
+        return objects[0][2];
     }
     
     /*
@@ -106,8 +113,13 @@ public class _02_2DArrayPractice {
      */
     public Integer test6() {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
+        int sum = 0;
         
-        return null;
+        	for(int col=0; col<=nums.length;col++) {
+        		sum +=nums[0][col];
+        	}
+        
+        return sum;
     }
     
     /*
@@ -116,8 +128,11 @@ public class _02_2DArrayPractice {
      */
     public Integer test7() {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
-        
-        return null;
+        int sum=0;
+        for(int row = 0;row<nums.length;row++) {
+        	sum+=nums[row][0];
+        }
+        return sum;
     }
     
     /*
@@ -125,8 +140,11 @@ public class _02_2DArrayPractice {
      * specified row
      */
     public Integer getSumByRow(int[][] matrix, int row) {
-        
-        return null;
+    	int sum =0;
+        for(int col =0; col<matrix.length;col++) {
+        	sum+=matrix[row][col];
+        }
+        return sum;
     }
     
     /*
@@ -135,14 +153,18 @@ public class _02_2DArrayPractice {
      */
     public Integer getSumByColumn(int[][] matrix, int col) {
         
-        return null;
+    	int sum =0;
+        for(int row =0; row<matrix.length;row++) {
+        	sum+=matrix[row][col];
+        }
+        return sum;
     }
     
     /*
      * Return the value of the element adjacent to the specified row and column
      * The directions East, West, North, South are relative to the 2D array
      * matrix/grid. For example in this 3x3 2D array:
-     * 
+     * =
      *          [1][2][3]
      *          [4][5][6]
      *          [7][8][9]
@@ -158,8 +180,16 @@ public class _02_2DArrayPractice {
      *    boundaries, return null.
      */
     public Integer getEastNeighbor(int[][] matrix, int row, int col) {
-        
-        return null;
+        if(col+1>matrix.length){
+        	return null;
+        }
+        else if(col+1<matrix.length) {
+        	return null;
+        }
+        else {
+        	return matrix[row][col+1];
+        }
+    	
     }
     
     public Integer getWestNeighbor(int[][] matrix, int row, int col) {
