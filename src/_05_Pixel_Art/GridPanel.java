@@ -3,6 +3,7 @@ package _05_Pixel_Art;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.util.Random;
 
 import javax.swing.JPanel;
 
@@ -15,12 +16,14 @@ public class GridPanel extends JPanel{
     private int pixelHeight;
     private int rows;
     private int cols;
+  
 
-    // 1. Create a 2D array of pixels. Do not initialize it yet.
+    int[][]pixels;// 1. Create a 2D array of pixels. Do not initialize it yet.
 
     private Color color;
 
     public GridPanel(int w, int h, int r, int c) {
+    	 Random random = new Random();
         this.windowWidth = w;
         this.windowHeight = h;
         this.rows = r;
@@ -33,10 +36,15 @@ public class GridPanel extends JPanel{
 
         setPreferredSize(new Dimension(windowWidth, windowHeight));
 
-        // 2. Initialize the pixel array using the rows and cols variables.
+       pixels= new int[r][c]; // 2. Initialize the pixel array using the rows and cols variables.
 
 
-        // 3. Iterate through the array and initialize each element to a new pixel.
+       for(int row=0; row<pixels.length;row++) {
+    	   
+    	   for(int col =0; col<pixels[row].length;col++){
+    		   pixels[row][col]=pixels[random.nextInt(pixelHeight)][random.nextInt(pixelWidth)];// 3. Iterate through the array and initialize each element to a new pixel.
+    	   }
+       }
 
 
     }
@@ -55,6 +63,11 @@ public class GridPanel extends JPanel{
         // 4. Iterate through the array.
         //    For every pixel in the list, fill in a rectangle using the pixel's color.
         //    Then, use drawRect to add a grid pattern to your display.
-
+for(int row =0;row<pixels.length;row++) {
+	
+	for(int col = 0; col<pixels[row].length;col++) {
+		pixels[][]
+	}
+}
     }
 }
