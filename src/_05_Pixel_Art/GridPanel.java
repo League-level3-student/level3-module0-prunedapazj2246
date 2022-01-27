@@ -16,7 +16,10 @@ public class GridPanel extends JPanel{
     private int pixelHeight;
     private int rows;
     private int cols;
-  
+    public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
     int[][]pixels;// 1. Create a 2D array of pixels. Do not initialize it yet.
 
@@ -57,10 +60,25 @@ public class GridPanel extends JPanel{
     public void clickPixel(int mouseX, int mouseY) {
         // 5. Use the mouseX and mouseY variables to change the color
         //    of the pixel that was clicked. *HINT* Use the pixel's dimensions.
-    	Graphics g;
+    	Random r = new Random();
+    	
+    	for(int row=0;row<pixels.length;row++ ) {
+    		for(int col=0; col<pixels[row].length;col++) {
+    			Graphics g;setColor(Color.GREEN);
+    			 Graphics g1;drawRect(mouseX, mouseY, 1, 1);
+    			 
+    		}
+    	}
     }
 
-    @Override
+ 
+
+	private void drawRect(int mouseX, int mouseY, int i, int j) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
     public void paintComponent(Graphics g) {
         // 4. Iterate through the array.
         //    For every pixel in the list, fill in a rectangle using the pixel's color.
