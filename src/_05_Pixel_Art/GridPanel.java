@@ -3,6 +3,7 @@ package _05_Pixel_Art;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.image.PixelGrabber;
 import java.util.Random;
 
 import javax.swing.JPanel;
@@ -20,13 +21,14 @@ public class GridPanel extends JPanel{
 		// TODO Auto-generated method stub
 
 	}
-
+GridPanel gp;
     int[][]pixels;// 1. Create a 2D array of pixels. Do not initialize it yet.
 
     private Color color;
 
     public GridPanel(int w, int h, int r, int c) {
-    	 Random random = new Random();
+    	GridPanel gp = new GridPanel(w,h,r,c);
+    	Random random=new Random();
         this.windowWidth = w;
         this.windowHeight = h;
         this.rows = r;
@@ -39,13 +41,13 @@ public class GridPanel extends JPanel{
 
         setPreferredSize(new Dimension(windowWidth, windowHeight));
 
-       pixels= new int[r][c]; // 2. Initialize the pixel array using the rows and cols variables.
+       pixels= new int[rows][cols]; // 2. Initialize the pixel array using the rows and cols variables.
 
 
        for(int row=0; row<pixels.length;row++) {
     	   
     	   for(int col =0; col<pixels[row].length;col++){
-    		   pixels[row][col]=pixels[random.nextInt(pixelHeight)][random.nextInt(pixelWidth)];
+    		   pixels[row][col]=pixels[windowWidth-row][windowHeight-col];
     		   // 3. Iterate through the array and initialize each element to a new pixel.
     	   }
        }
@@ -60,23 +62,24 @@ public class GridPanel extends JPanel{
     public void clickPixel(int mouseX, int mouseY) {
         // 5. Use the mouseX and mouseY variables to change the color
         //    of the pixel that was clicked. *HINT* Use the pixel's dimensions.
-    	Random r = new Random();
     	
-    	for(int row=0;row<pixels.length;row++ ) {
+    	
+    	
+  /*  	for(int row=0;row<pixels.length;row++ ) {
     		for(int col=0; col<pixels[row].length;col++) {
-    			Graphics g;setColor(Color.GREEN);
+    			Graphics g;setColor(Color.BLACK);
     			 Graphics g1;drawRect(mouseX, mouseY, 1, 1);
     			 
     		}
     	}
+    }*/
     }
-
  
 
-	private void drawRect(int mouseX, int mouseY, int i, int j) {
+	//private void drawRect(int mouseX, int mouseY, int i, int j) {
 		// TODO Auto-generated method stub
 		
-	}
+	//}
 
 	@Override
     public void paintComponent(Graphics g) {
@@ -86,8 +89,8 @@ public class GridPanel extends JPanel{
 for(int row =0;row<pixels.length;row++) {
 	
 	for(int col = 0; col<pixels[row].length;col++) {
-	g.setColor(Color.BLACK);
-	g.drawRect(col, row, 1, 1);
+g.setColor(color);
+	g.drawRect(col, row, pixelWidth, pixelHeight);
 	}
 }
     }
