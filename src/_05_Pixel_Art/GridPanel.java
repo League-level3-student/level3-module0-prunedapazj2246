@@ -65,21 +65,10 @@ GridPanel gp;
     	
     	
     	
-  /*  	for(int row=0;row<pixels.length;row++ ) {
-    		for(int col=0; col<pixels[row].length;col++) {
-    			Graphics g;setColor(Color.BLACK);
-    			 Graphics g1;drawRect(mouseX, mouseY, 1, 1);
-    			 
-    		}
-    	}
-    }*/
+  	
+    
     }
  
-
-	//private void drawRect(int mouseX, int mouseY, int i, int j) {
-		// TODO Auto-generated method stub
-		
-	//}
 
 	@Override
     public void paintComponent(Graphics g) {
