@@ -115,7 +115,7 @@ for (int row = 0; row < cells.length; row++) {
 for (int row = 0; row < cells.length; row++) {
 	
 	for (int col = 0; col < cells[row].length; col++) {
-	cells[row][col].liveOrDie(8);	
+	cells[row][col].liveOrDie(livingNeighbors[row][col]);	
 	}
 	
 }
@@ -183,7 +183,12 @@ for (int row = 0; row < cells.length; row++) {
         //    cellSize, meaning it's possible to click inside of a cell. You
         //    have to determine the cell that was clicked from the pixel
         //    location and toggle the 'isAlive' variable for that cell.
-cells[e.getX()/cellSize][e.getY()/cellSize].isAlive=true;
+if (cells[e.getX()/cellSize][e.getY()/cellSize].isAlive==true) {
+	cells[e.getX()/cellSize][e.getY()/cellSize].isAlive=false;
+}
+else {
+	cells[e.getX()/cellSize][e.getY()/cellSize].isAlive=true;
+}
         repaint();
     }
 
