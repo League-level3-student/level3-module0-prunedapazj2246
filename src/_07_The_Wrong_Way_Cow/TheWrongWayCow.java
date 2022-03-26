@@ -85,9 +85,9 @@ public class TheWrongWayCow {
 			for (int row = 0; row < field.length; row++) {
 
 				for (int col = 0; col < field[row].length; col++) {
-					if (col + 1 < field[row].length && field[row][col + 1] == 'o') {
+					if (col + 1 < field[row].length && field[row][col] == 'c' && field[row][col+1]=='o') {
 						System.out.println(row +" "+ col);
-						return new int[] { row, col };
+						return new int[] { col, row };
 					}
 				}
 			}
@@ -97,9 +97,9 @@ public class TheWrongWayCow {
 			for (int row = 0; row < field.length; row++) {
 
 				for (int col = 0; col < field[row].length; col++) {
-					if (col - 1 >= 0 && field[row][col - 1] == 'o') {
+					if (col - 1 >= 0 && field[row][col] == 'c' && field[row][col-1]=='o') {
 						System.out.println(row +" "+ col);
-						return new int[] { row, col };
+						return new int[] { col, row };
 					}
 				}
 			}
@@ -107,9 +107,9 @@ public class TheWrongWayCow {
 			for (int row = 0; row < field.length; row++) {
 
 				for (int col = 0; col < field[row].length; col++) {
-					if (row + 1 < field.length && field[row + 1][col] == 'o') {
+					if (row + 1 < field.length && field[row][col] == 'c' && field[row+1][col]=='o') {
 						System.out.println(row +" "+ col);
-						return new int[] { row, col };
+						return new int[] { col, row };
 					}
 				}
 			}
@@ -117,9 +117,9 @@ public class TheWrongWayCow {
 			for (int row = 0; row < field.length; row++) {
 
 				for (int col = 0; col < field[row].length; col++) {
-					if (row - 1 >= 0 && field[row - 1][col] == 'o') {
+					if (row-1 >= 0 && field[row][col] == 'c' && field[row-1][col]=='o') {
 						System.out.println(row +" "+ col);
-						return new int[] { row, col };
+						return new int[] { col, row };
 					}
 				}
 			}
