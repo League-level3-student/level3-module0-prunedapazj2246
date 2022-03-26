@@ -62,6 +62,7 @@ public class TheWrongWayCowTest {
       };
     assertArrayEquals(new int[]{6,2}, TheWrongWayCow.findWrongWayCow(show(field)));
   }
+ //docsdocs jjj
 
   @Test
   public void ex2() {
